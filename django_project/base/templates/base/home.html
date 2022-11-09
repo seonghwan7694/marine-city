@@ -1,0 +1,67 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block head %}
+{% endblock head %}
+
+{% block world_map %}
+    <img src="{% static 'images/world_map.svg' %}" alt="world_map" class="world_map">
+{% endblock world_map %}
+
+{% block content %}
+
+    <div>
+        <a href="{% url 'create_container' %}" class="create_container">New container</a>
+
+        <ul class="container_ul">
+            {% for container in containers %}
+                <li class="container_li">
+                     <div class="container_info">
+                        <div class="dropdown">
+                            <a onclick="func_dropdown({{ forloop.counter0 }})" class="drop_btn">
+                                <strong>&middot;&middot;&middot;</strong>
+                            </a>
+                        </div>
+                        <div class="dropdown_content not_show" id="content_{{ forloop.counter0 }}">
+                            <div class="dropdown_div">
+                                <a href="{% url 'update_container' container.id %}" class="list">update</a>
+                            </div>
+                            <div class="dropdown_div">
+                                <a href="{% url 'delete_container' container.id %}" class="list">delete</a>
+                            </div>
+                            <div class="dropdown_div">
+                                <a href="{% url 'read_container' container.id %}" class="list">detail</a>
+                            </div>
+                        </div>
+                         <div>
+                             상품명 : {{ container.goods }}
+                         </div>
+                         <div>
+                             수량 : {{ container.goods_cnt }}
+                         </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <!--
+        {% for container in containers %}
+            <div class="container_info">
+                <div class="dropdown">
+                    <a onclick="func_dropdown({{ forloop.counter0 }})" class="drop_btn">
+                        <strong>&middot;&middot;&middot;</strong>
+                    </a>
+                </div>
+                <div class="dropdown_content not_show" id="content_{{ forloop.counter0 }}">
+                    <a href="{% url 'update_container' container.id %}" class="list">update</a>
+                    <br>
+                    <a href="{% url 'delete_container' container.id %}" class="list">delete</a>
+                    <br>
+                    <a href="{% url 'read_container' container.id %}" class="list">detail</a>
+                </div>
+            </div>
+        {% endfor %}
+        -->
+    </div>
+
+{% endblock content %}

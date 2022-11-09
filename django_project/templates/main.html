@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>컨테이너 관리 프로그램</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}?{% now "U" %}">
+
+    <style>
+        .main_content {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav_bar">
+        {% include 'nav_bar.html' %}
+    </div>
+    <div class="main_content">
+        <div class="side_bar">
+        </div>
+        <div class="mid_content">
+            {% block world_map %}
+            {% endblock world_map %}
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+
+</body>
+    <script src="{% static 'js/main.js' %}"></script>
+</html>
