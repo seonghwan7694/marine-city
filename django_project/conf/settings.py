@@ -24,10 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-oyf3$xcblkhfn!pdt&4k-_dl&3h87m4awa2bf$c&x9oh3z%bew'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False;
 
 ALLOWED_HOSTS = [
-    '0.0.0.0', # broadcast address
     '192.168.35.119',
     'localhost',
     '127.0.0.1',
@@ -63,7 +62,7 @@ ROOT_URLCONF = 'conf.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [ BASE_DIR / 'app' / 'templates' / 'app' ] # 앱의 템플릿 경로를 연결해주었음.
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -126,7 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/' # 개발자가 웹 서비스 내부에서 미리 준비한 것.
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = '/media/' # filefield나 imagefield를 통해 사용자가 업로드한 데이터
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
