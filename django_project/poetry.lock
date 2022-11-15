@@ -84,10 +84,18 @@ category = "main"
 optional = false
 python-versions = ">=2"
 
+[[package]]
+name = "uwsgi"
+version = "2.0.21"
+description = "The uWSGI server"
+category = "main"
+optional = false
+python-versions = "*"
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "c43ea37499bfacd47d56b8a8e52bd07a7b7aa55527ca1518ae7b82dbc61718d5"
+content-hash = "e663a587eb63b02a68ffed80373868ff52ece3d0c1c0816973e6def90c74a914"
 
 [metadata.files]
 asgiref = [
@@ -174,4 +182,7 @@ sqlparse = [
 tzdata = [
     {file = "tzdata-2022.6-py2.py3-none-any.whl", hash = "sha256:04a680bdc5b15750c39c12a448885a51134a27ec9af83667663f0b3a1bf3f342"},
     {file = "tzdata-2022.6.tar.gz", hash = "sha256:91f11db4503385928c15598c98573e3af07e7229181bee5375bd30f1695ddcae"},
+]
+uwsgi = [
+    {file = "uwsgi-2.0.21.tar.gz", hash = "sha256:35a30d83791329429bc04fe44183ce4ab512fcf6968070a7bfba42fc5a0552a9"},
 ]
