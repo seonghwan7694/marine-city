@@ -4,5 +4,23 @@
 # dummy File
 .conflict/
 .static/*
-.app/__pycache__
-.migrations/__pycache__
+
+# 말그대로 캐시라서 제외해도 문제가 없음.
+django_project/app/migrations/__pycache__
+django_project/app/__pycache__
+django_project/conf/__pycache__
+
+# ImageField, FileField를 담당하는 media 디렉터리는 깨끗한 상태를 유지하면 좋을 것 같음.
+django_project/media/*
+!django_project/media/.dummy_file
+
+# python manage.py collectstatic할 때 복제된 파일이 생성되는데, 그것을 막기 위함.
+django_project/static/*
+!django_project/static/.dummy_file
+
+# init.sh를 제공했으므로, 마이그레이션 기록은 남겨둘 필요가 없음.
+django_project/app/migrations/*
+!django_project/app/migrations/__init__.py
+
+# db도 마찬가지임. 모델은 계속 수정될 예정이라 이런 커밋은 불필요함.
+django_project/db.sqlite3
