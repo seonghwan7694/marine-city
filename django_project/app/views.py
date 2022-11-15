@@ -11,12 +11,12 @@ from django.urls import reverse_lazy
 def home(request):
     containers = Container.objects.all()
     context = {'containers': containers}
-    return render(request, 'base/home.html', context)
+    return render(request, 'app/home.html', context)
 
 def read_container(request, pk):
     container = Container.objects.get(id=pk)
     context = {'container': container}
-    return render(request, 'base/container.html', context)
+    return render(request, 'app/container.html', context)
 
 def create_container(request):
     form = ContainerForm()
@@ -26,7 +26,7 @@ def create_container(request):
         if form.is_valid():
             form.save()
             return redirect('home')
-    return render(request, 'base/container_form.html', context)
+    return render(request, 'app/container_form.html', context)
 
 def update_container(request, pk):
     container = Container.objects.get(id=pk)
@@ -37,11 +37,11 @@ def update_container(request, pk):
             form.save()
             return redirect('home')
     context = {'form': form}
-    return render(request, 'base/container_form.html', context)
+    return render(request, 'app/container_form.html', context)
 
 def delete_container(request, pk):
     container = Container.objects.get(id=pk)
     if request.method == 'POST':
         container.delete()
         return redirect('home')
-    return render(request, 'base/container_delete.html', {'obj':container})
+    return render(request, 'app/container_delete.html', {'obj':container})

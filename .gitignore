@@ -59,4 +59,9 @@ dkms.conf
 # IDE configuration
 .idea
 
+# dummy File
+.static/*
+.app/__pycache__
+.migrations/__pycache__
+
 # End of https://www.toptal.com/developers/gitignore/api/c
