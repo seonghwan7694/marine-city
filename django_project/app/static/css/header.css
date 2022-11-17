@@ -14,6 +14,9 @@
 
 .header_logo {
     padding-left: 20px;
+}
+
+.header_logo_link {
     font-size: 15px;
     font-weight: 900;
     font-style: italic;
@@ -23,6 +26,9 @@
     text-decoration-style: double;
 }
 
+.header_logo_link:hover {
+    cursor: pointer;
+}
 .header_user {
     display: flex;
     flex-direction: row;
@@ -43,3 +49,9 @@
     font-size: 8px;
     margin-right: 10px;
 }
+
+.header_login_link:hover {
+    cursor: pointer;
+    text-decoration: underline black;
+}
+

@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login_register.css' %}" type="text/css">
+{% endblock head %}
+
+
+{% block content %}
+    {% load static %}
+    {% if page == 'login' %}
+        <div class="login_register_container">
+            <div class="login_register">
+                <form method="POST" action="" class="login_register_form">
+                    {% csrf_token %}
+                    <div class="login_register_form_title">
+                        software logistics
+                    </div>
+                    <div>
+                        <input type="text" name="username" placeholder="Username" class="login_register_form_input"/>
+                    </div>
+                    <div>
+                        <input type="password" name="password" placeholder="Password"
+                               class="login_register_form_input"/>
+                    </div>
+                    <div>
+                        <input type="submit" value="Sign in" class="login_register_form_button"/>
+                    </div>
+
+                </form>
+
+                <div class="login_register_text1">Haven't signed up yet?</div>
+                <div style="text-align: center;"><a class="login_register_text2" href="{% url 'register' %}">Sign up</a></div>
+
+            </div>
+        </div>
+    {% else %}
+        <div>
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Register"/>
+            </form>
+            <p>Already signed up yet?</p>
+            <a href="{% url 'login' %}">Sign in</a>
+        </div>
+    {% endif %}
+{% endblock content %}

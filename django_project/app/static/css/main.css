@@ -1,4 +1,11 @@
 body {
     font-family: 'Noto Sans KR', sans-serif;
+    padding-top: 50px;
     margin : 0px;
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    all: unset;
 }

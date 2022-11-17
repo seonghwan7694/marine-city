@@ -6,11 +6,63 @@ from django.views.generic import ListView, DeleteView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from .models import User
+from django.contrib import messages
+from .form import MyUserCreationForm, UserForm
+
 
 # Create your views here.
 
 def main(request):
     return render(request, 'main.html')
+
+
+def home(request):
+    return render(request, 'app/home.html')
+
+
+def login_page(request):
+    page = 'login'
+    if request.user.is_authenticated:
+        return redirect('home')
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Username OR password does not exist')
+
+    context = {'page': page}
+    return render(request, 'app/login_register.html', context)
+
+
+def logout_page(request):
+    logout(request)
+    return redirect('main')
+
+
+def register_page(request):
+    form = MyUserCreationForm()
+
+    if request.method == 'POST':
+        form = MyUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.username = user.username.lower()
+            user.save()
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'An error occurred during registration')
+
+    return render(request, 'app/login_register.html', {'form': form})
 
 
 """

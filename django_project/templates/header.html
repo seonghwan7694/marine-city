@@ -1,14 +1,18 @@
 {% load static %}
-`
+
 {% block header %}
     <div class="header">
-        <div class="header_logo">software logistics</div>
+        {% if request.user.is_authenicated %}
+            <div class="header_logo"><a href="{% url 'home' %}" class="header_logo_link">software logistics</a></div>
+        {% else %}
+            <div class="header_logo"><a href="{% url 'main' %}" class="header_logo_link">software logistics</a></div>
+        {% endif %}
         <div class="header_user">
             {% if request.user.is_authenticated %}
                 <img class="header_user_avatar" src="{% static 'img/avatar.svg' %}" alt="header_user_avatar">
-                <div class="header_user_info">OOO 관리자님, 반갑습니다.</div>
+                <div class="header_user_info">관리자님, 반갑습니다.</div>
             {% else %}
-                <div class="header_login">Login</div>
+                <div class="header_login"><a class="header_login_link" href="{% url 'login' %}">Login</a></div>
             {% endif %}
         </div>
     </div>
