@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from .models import Container
 from .form import ContainerForm
 
@@ -6,12 +6,18 @@ from django.views.generic import ListView, DeleteView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
+
 # Create your views here.
 
+def main(request):
+    return render(request, 'main.html')
+
+
+"""
 def home(request):
     containers = Container.objects.all()
     context = {'containers': containers}
-    return render(request, 'app/home.html', context)
+    return render(request, 'app/main.html', context)
 
 def read_container(request, pk):
     container = Container.objects.get(id=pk)
@@ -45,3 +51,4 @@ def delete_container(request, pk):
         container.delete()
         return redirect('home')
     return render(request, 'app/container_delete.html', {'obj':container})
+"""
