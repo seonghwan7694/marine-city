@@ -1,10 +1,11 @@
-.login_register_container {
+/* login 기능에 대한 css */
+.login_container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.login_register {
+.login {
     margin-top: 110px;
     display: inline-block;
     height: 100%;
@@ -13,14 +14,14 @@
     padding: 20px 30px 20px 30px;
 }
 
-.login_register_form {
+.login_form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.login_register_form_title {
+.login_form_title {
     margin-bottom: 20px;
     font-size: 18px;
     font-weight: 900;
@@ -31,7 +32,10 @@
     text-decoration-style: double;
 }
 
-.login_register_form_input {
+.login_form_input,
+#id_username,
+#id_password1,
+#id_password2 {
     padding: 8px 6px;
     border: none;
     background-color: rgba(237, 237, 239, 255);
@@ -41,15 +45,18 @@
     border-radius: 3px;
 }
 
-.login_register_form_input:focus {
-    outline:none;
+.login_form_input:focus,
+#id_username:focus,
+#id_password1:focus,
+#id_password2:focus {
+    outline: none;
 }
 
-.login_register_form_input::placeholder {
+.login_form_input::placeholder {
     font-size: 10px;
 }
 
-.login_register_form_button {
+.login_form_button, .register_form_button {
     margin-top: 10px;
     padding: 8px 30px;
     border: none;
@@ -58,20 +65,21 @@
     color: white;
 }
 
-.login_register_form_button:hover, .login_register_form_button:focus {
+.login_form_button:hover, .login_form_button:focus,
+.register_form_button:hover, .register_form_button:focus {
     background-color: #9EAEAE;
     cursor: pointer;
     outline: none;
 }
 
-.login_register_text1 {
+.login_text1, .register_text1 {
     margin-top: 20px;
     font-size: 9px;
     text-align: center;
     color: rgba(135, 135, 137, 255);
 }
 
-.login_register_text2 {
+.login_text2, .register_text2 {
     font-size: 10px;
     text-align: center;
     color: rgba(135, 135, 137, 255);
@@ -79,8 +87,55 @@
     text-decoration-color: rgba(135, 135, 137, 255);
 }
 
-.login_register_text2:hover {
+.login_text2:hover, .register_text2:hover {
     cursor: pointer;
     color: #626264;
     text-decoration-color: #626264;
+}
+
+/* register 기능에 대한 css */
+.register_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register {
+    margin-top: 60px;
+    display: inline-block;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px 20px 30px;
+}
+
+#id_manage_port {
+    background-color: rgba(237, 237, 239, 255);
+    color: rgba(135, 135, 137, 255);
+    border: none;
+    border-radius: 3px;
+    padding: 5px 6px;
+    font-size: 10px;
+}
+
+#id_username,
+#id_password1,
+#id_password2 {
+    font-size: 10px;
+}
+
+.register_avatar {
+    background-color: rgba(237, 237, 239, 255);
+    color: rgba(135, 135, 137, 255);
+    border: none;
+    border-radius: 3px;
+    padding: 2px 3px;
 }
