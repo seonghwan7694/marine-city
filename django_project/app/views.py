@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import Container
-from .form import ContainerForm
 
 from django.views.generic import ListView, DeleteView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -10,7 +9,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import User
 from django.contrib import messages
-from .form import MyUserCreationForm
+from .form import MyUserCreationForm, ContainerForm
+from django.db.models import Q
 
 
 # Create your views here.
@@ -63,6 +63,22 @@ def register_page(request):
             messages.error(request, 'An error occurred during registration')
 
     return render(request, 'app/login_register.html', {'form': form})
+
+
+def create_container(request):
+    form = ContainerForm()
+    if request.method == 'POST':
+        form = ContainerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    return render(request, 'app/container_form.html', {'form': form})
+
+
+def manage_container(request):
+    containers = Container.objects.all()
+    context = {'containers': containers}
+    return render(request, 'app/manage_container.html', context)
 
 
 """

@@ -11,22 +11,15 @@ class User(AbstractUser):
 
     REQUIRED_FIELDS = []
 
-
-class Goods(models.Model):
-    goods = models.CharField(max_length=50, primary_key=True)
-
     def __str__(self):
-        return self.goods
-
-    class Meta:
-        # verbose_name = 'Goods'
-        verbose_name_plural = 'Goods'
+        return self.manage_port
 
 
 class Container(models.Model):
     port_list = (('부산항', '부산항'), ('싱가포르항', '싱가포르항'), ('터키항', '터키항'))
+    goods_list = (('우유', '우유'), ('신발', '신발'), ('가방', '가방'), ('옷', '옷'), ('시계', '시계'), ('과자', '과자'))
     port = models.CharField(max_length=10, choices=port_list)
-    goods = models.ForeignKey(Goods, on_delete=models.CASCADE, null=True)
+    goods = models.CharField(max_length=20, choices=goods_list)
     goods_cnt = models.IntegerField(default=1, validators=[MaxValueValidator(20), MinValueValidator(1)])
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)

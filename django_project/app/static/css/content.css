@@ -89,6 +89,10 @@
     width: 70px;
 }
 
+.func_btn:hover{
+    cursor:pointer;
+}
+
 /* 오른쪽 사이드 섹션 */
 .task_queue {
     display: flex;

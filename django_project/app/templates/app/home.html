@@ -22,7 +22,7 @@
                     <div class="func">
                         <img class="func_img" src="{% static 'img/box2.png' %}">
                         <button class="func_btn" type="button">
-                            create container
+                            <a href="{% url 'manage_container' %}">manage container</a>
                         </button>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                     <div class="func">
                         <img class="func_img" src="{% static 'img/open_box.png' %}">
                         <button class="func_btn" type="button">
-                            delete container
+                            <a href="{% url 'create_container' %}">create container</a>
                         </button>
                     </div>
                 </div>

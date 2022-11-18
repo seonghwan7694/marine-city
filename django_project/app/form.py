@@ -7,7 +7,7 @@ from django import forms
 class ContainerForm(ModelForm):
     class Meta:
         model = Container
-        fields = '__all__'
+        fields = ['port', 'goods', 'goods_cnt']
 
 
 class MyUserCreationForm(UserCreationForm):
