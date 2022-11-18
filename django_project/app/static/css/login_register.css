@@ -39,7 +39,8 @@
     padding: 8px 6px;
     border: none;
     background-color: rgba(237, 237, 239, 255);
-    color: rgba(135, 135, 137, 255);
+    font-size: 10px;
+    color: black;
     width: 177px;
     margin-bottom: 5px;
     border-radius: 3px;

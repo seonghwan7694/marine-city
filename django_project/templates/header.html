@@ -1,20 +1,18 @@
 {% load static %}
 
-{% block header %}
-    <div class="header">
-        {% if request.user.is_authenicated %}
-            <div class="header_logo"><a href="{% url 'home' %}" class="header_logo_link">software logistics</a></div>
-        {% else %}
-            <div class="header_logo"><a href="{% url 'main' %}" class="header_logo_link">software logistics</a></div>
-        {% endif %}
+<div class="header">
+
+    {% if request.user.is_active %}
+        <div class="header_logo"><a href="{% url 'home' %}" class="header_logo_link">software logistics</a></div>
         <div class="header_user">
-            {% if request.user.is_authenticated %}
-                <img class="header_user_avatar" src="{% static 'img/avatar.svg' %}" alt="header_user_avatar">
-                <div class="header_user_info"> {{ request.user.manage_port }} 관리자님, 반갑습니다.</div>
-                <a href="{% url 'logout' %}" class="header_user_logout">logout</a>
-            {% else %}
-                <div class="header_login"><a class="header_login_link" href="{% url 'login' %}">Login</a></div>
-            {% endif %}
+            <img class="header_user_avatar" src="{% static 'img/avatar.svg' %}" alt="header_user_avatar">
+            <div class="header_user_info"> {{ request.user.manage_port }} 관리자님, 반갑습니다.</div>
+            <a href="{% url 'logout' %}" class="header_user_logout">Logout</a>
         </div>
-    </div>
-{% endblock header %}
+    {% else %}
+        <div class="header_logo"><a href="{% url 'main' %}" class="header_logo_link">software logistics</a></div>
+        <div class="header_user">
+            <div class="header_login"><a class="header_login_link" href="{% url 'login' %}">Login</a></div>
+        </div>
+    {% endif %}
+</div>
