@@ -13,22 +13,18 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/admin_interface.html.css' %}" type="text/css">
     {% block head %}
     {% endblock head %}
 </head>
 <body>
 {% include 'header.html' %}
 
-{% if request.user.is_active %}
-    {% include 'admin_interface.html' %}
-{% endif %}
-
 {% block content %}
 {% endblock content %}
 
 {% include 'footer.html' %}
-<script type="text/javascript" , src="{% static 'js/keep_scroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/keep_scroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 {% block js %}
 {% endblock js %}
 </body>

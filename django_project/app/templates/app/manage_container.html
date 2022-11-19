@@ -4,32 +4,36 @@
     <div class="container_list">
         {% for container in containers %}
             {% if container.port == user_info or request.user.username == "admin" %}
-            <div class="container_list_element">
-                <div class="container_list_element_1">
-                    <div class="container_list_element_1-1">
-                        <img src="{{ container.goods.goods_img }}" alt="제품 사진" class="container_list_element_img">
+                <div class="container_list_element">
+                    <div class="container_list_element_1">
+                        <div class="container_list_element_1-1">
+                            <img src="{{ container.goods.goods_img }}" alt="제품 사진" class="container_list_element_img">
+                            <div class="container_list_element_1-1-1">컨테이너 UUID : {{ container.id }}</div>
+                        </div>
+                        <div class="container_list_element_1-2">
+                            <div class="container_list_element_1-2-1">제품명 : {{ container.goods.goods }}</div>
+                            <div class="container_list_element_1-2-2">수량 : {{ container.goods_cnt }}</div>
+                            <div class="container_list_element_1-2-3">항구 : {{ container.port }}</div>
+                            <div class="container_list_element_1-2-4">수정일</div>
+                            <div class="container_list_element_1-2-5">{{ container.updated|date:"h시 i분" }}</div>
+                            <div class="container_list_element_1-2-6">{{ container.updated|date:"Y년 m월 d일" }}</div>
+                        </div>
                     </div>
-                    <div class="container_list_element_1-2">
-                        <div class="container_list_element_1-2-1">ID : {{ container.id }}</div>
-                        <div class="container_list_element_1-2-1">제품명 : {{ container.goods.goods }}</div>
-                        <div class="container_list_element_1-2-1">수량 : {{ container.goods_cnt }}</div>
-                        <div class="container_list_element_1-2-1">항구 : {{ container.port }}</div>
+                    <div class="container_list_element_2">
+                        <div class="dropdown">
+                            <a onclick="func_dropdown({{ forloop.counter0 }})" class="drop_btn">
+                                <strong>&middot;&middot;&middot;</strong>
+                            </a>
+                        </div>
+                        <div class="dropdown_content not_show" id="content_{{ forloop.counter0 }}">
+                            <a href="{% url 'update_container' container.id %}" class="list">update</a>
+                            <br>
+                            <a href="{% url 'delete_container' container.id %}" class="list">delete</a>
+                            <br>
+                            <a href="{% url 'read_container' container.id %}" class="list">detail</a>
+                        </div>
                     </div>
                 </div>
-                <div class="container_list_element_2">
-                    <div class="container_list_element_2-1">
-                        <div class="container_list_element_2-1-1">수정일</div>
-                        <div class="container_list_element_2-1-3">{{ container.updated|date:"h시 i분" }}</div>
-                        <div class="container_list_element_2-1-2">{{ container.updated|date:"Y년 m월 d일" }}</div>
-                    </div>
-                    <div class="container_list_element_2-1">
-                        <div class="container_list_element_2-1-1">생성일</div>
-                        <div class="container_list_element_2-1-3">{{ container.created|date:"h시 i분" }}</div>
-                        <div class="container_list_element_2-1-2">{{ container.created|date:"Y년 m월 d일" }}</div>
-                    </div>
-                </div>
-                <div class="container_list_element_3">...</div>
-            </div>
             {% endif %}
         {% endfor %}
     </div>

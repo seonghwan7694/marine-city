@@ -23,7 +23,7 @@ def home(request):
     containers = Container.objects.all()
     user_info = request.user.__str__()
     context = {'containers': containers, 'user_info': user_info}
-    return render(request, 'app/home.html', context,)
+    return render(request, 'app/home.html', context, )
 
 
 def login_page(request):
@@ -81,26 +81,13 @@ def create_container(request):
     return render(request, 'app/container_form.html', context)
 
 
-"""
-def home(request):
-    containers = Container.objects.all()
-    context = {'containers': containers}
-    return render(request, 'app/main.html', context)
-
-def read_container(request, pk):
+def delete_container(request, pk):
     container = Container.objects.get(id=pk)
-    context = {'container': container}
-    return render(request, 'app/container.html', context)
-
-def create_container(request):
-    form = ContainerForm()
-    context = {'form': form}
     if request.method == 'POST':
-        form = ContainerForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    return render(request, 'app/container_form.html', context)
+        container.delete()
+        return redirect('home')
+    return render(request, 'app/container_delete.html', {'obj': container})
+
 
 def update_container(request, pk):
     container = Container.objects.get(id=pk)
@@ -113,10 +100,8 @@ def update_container(request, pk):
     context = {'form': form}
     return render(request, 'app/container_form.html', context)
 
-def delete_container(request, pk):
+
+def read_container(request, pk):
     container = Container.objects.get(id=pk)
-    if request.method == 'POST':
-        container.delete()
-        return redirect('home')
-    return render(request, 'app/container_delete.html', {'obj':container})
-"""
+    context = {'container': container}
+    return render(request, 'app/container.html', context)
