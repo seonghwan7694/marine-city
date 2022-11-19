@@ -1,0 +1,58 @@
+[
+  {
+    "model": "app.Goods",
+    "pk": 1,
+    "fields": {
+      "goods": "우유",
+      "goods_img": "/static/img/goods/milk.png"
+    }
+  },
+  {
+    "model": "app.Goods",
+    "pk": 2,
+    "fields": {
+      "goods": "사과",
+      "goods_img": "/static/img/goods/apple.png"
+    }
+  },
+  {
+    "model": "app.Goods",
+    "pk": 3,
+    "fields": {
+      "goods": "시계",
+      "goods_img": "/static/img/goods/watch.png"
+    }
+  },
+  {
+    "model": "app.Goods",
+    "pk": 4,
+    "fields": {
+      "goods": "바나나",
+      "goods_img": "/static/img/goods/banana.png"
+    }
+  },
+  {
+    "model": "app.Goods",
+    "pk": 5,
+    "fields": {
+      "goods": "신발",
+      "goods_img": "/static/img/goods/shoes.png"
+    }
+  },
+  {
+    "model": "app.Goods",
+    "pk": 6,
+    "fields": {
+      "goods": "바지",
+      "goods_img": "/static/img/goods/pants.png"
+    }
+  },
+  {
+    "model": "app.Goods",
+    "pk": 7,
+    "fields": {
+      "goods": "의자",
+      "goods_img": "/static/img/goods/chair.png"
+    }
+  }
+]

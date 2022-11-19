@@ -6,11 +6,11 @@
             <div class="container_list_element">
                 <div class="container_list_element_1">
                     <div class="container_list_element_1-1">
-                        <img src="{% static 'img/goods/shoes.png' %}" alt="제품 사진" class="container_list_element_img">
+                        <img src="{{ container.goods.goods_img }}" alt="제품 사진" class="container_list_element_img">
                     </div>
                     <div class="container_list_element_1-2">
                         <div class="container_list_element_1-2-1">ID : {{ container.id }}</div>
-                        <div class="container_list_element_1-2-1">제품명 : {{ container.goods }}</div>
+                        <div class="container_list_element_1-2-1">제품명 : {{ container.goods.goods }}</div>
                         <div class="container_list_element_1-2-1">수량 : {{ container.goods_cnt }}</div>
                         <div class="container_list_element_1-2-1">항구 : {{ container.port }}</div>
                     </div>
