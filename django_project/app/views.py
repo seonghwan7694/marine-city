@@ -20,7 +20,9 @@ def main(request):
 
 
 def home(request):
-    return render(request, 'app/home.html')
+    containers = Container.objects.all()
+    context = {'containers': containers}
+    return render(request, 'app/home.html', context)
 
 
 def login_page(request):
@@ -73,12 +75,6 @@ def create_container(request):
             form.save()
             return redirect('home')
     return render(request, 'app/container_form.html', {'form': form})
-
-
-def manage_container(request):
-    containers = Container.objects.all()
-    context = {'containers': containers}
-    return render(request, 'app/manage_container.html', context)
 
 
 """

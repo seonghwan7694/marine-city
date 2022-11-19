@@ -3,79 +3,15 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'css/content.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/manage_container.css' %}" type="text/css">
     {% block sub_head %}
     {% endblock sub_head %}
 {% endblock head %}
 
 {% block content %}
+    {% load static %}
     {% if request.user.is_active %}
-        <div class="main">
-            <div class="pannel">
-                <div class="pannel_name">
-                    admin interface
-                </div>
-                <div class="admin_pannel">
-                    <div class="func">
-                        <img class="func_img" src="{% static 'img/container.png' %}">
-                        <button class="func_btn" type="button">
-                            move container
-                        </button>
-                    </div>
-                </div>
-                <div class="admin_pannel">
-                    <div class="func">
-                        <img class="func_img" src="{% static 'img/boxs.png' %}">
-                        <button class="func_btn" type="button">
-                            view boxs
-                        </button>
-                    </div>
-                    <div class="func">
-                        <img class="func_img" src="{% static 'img/open_box.png' %}">
-                        <button class="func_btn" type="button">
-                            <a href="{% url 'create_container' %}">create container</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content">
-                <div class="pannel_name">
-                    admin interface
-                </div>
-                <div class="content_img">
-                    <img src="{% static 'img/new_world_map.png' %}" class="world_map">
-                </div>
-                <div class="task_state">
-                    부산항에서 싱가포르항으로 컨테이너를 옮기는 작업을 실행중입니다...
-                </div>
-            </div>
-
-            <div class="pannel">
-                <div class="pannel_name">
-                    task queue
-                </div>
-                <div class="task_queue">
-                    <div class="task">
-                        <div class="task_user_info">
-                            <div>
-                                <img src="{% static 'img/avatar.svg' %}" class="task_user_img">
-                            </div>
-                            <div class="task_user_name">
-                                부산항 관리자
-                            </div>
-                        </div>
-                        <div class="task_user_request">
-                            <div class="task_request_context">요청 내용 : 부산항 &rarr; 싱가포르항</div>
-                            <div class="task_request_date">요청 일시 : 2022년 11월 24일 09:46</div>
-                        </div>
-                        <div class="task_cancle_task">
-                            <button class="task_cancle_btn" type="button">실행중</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% block sub_content %}
-        {% endblock sub_content %}
+        {% include 'app/content.html' %}
+        {% include 'app/manage_container.html' %}
     {% endif %}
 {% endblock content %}

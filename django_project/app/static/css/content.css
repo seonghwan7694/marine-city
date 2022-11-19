@@ -1,13 +1,10 @@
-/* 메인 콘텐츠 */
-
-.main {
+.content_container {
     display: flex;
     flex-direction: row;
-    height: fit-content;
     padding-bottom: 10px;
 }
 
-.content {
+.content_element_1 {
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -19,26 +16,26 @@
     justify-content: space-between;
 }
 
-.content_img {
+.content_element_img {
     width: 100%;
     text-align: center;
     flex: 1;
 }
 
-.world_map {
-    width: 80%;
+.content_element_world-map {
+    width: 50%;
     object-fit: cover;
     object-position: center;
 }
 
-.task_state {
+.content_element_task-state {
     font-size: 8px;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 /* 사이드 섹션에 공통적으로 존재하는 요소 */
-.pannel {
+.content_element_2 {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -49,49 +46,13 @@
     margin-right: 10px;
 }
 
-.pannel_name {
+.content_element_title {
     font-size: 7px;
     font-weight: 300;
     margin-top: 4px;
 }
 
-/* 왼쪽 사이드 섹션 */
-.admin_pannel {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    padding: 10px 6px;
-    column-gap: 10px;
-}
 
-
-.func {
-    font-size: 12px;
-    border-radius: 9px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.func_img {
-    width: 70px;
-}
-
-.func_btn {
-    font-size: 8px;
-    border: none;
-    background-color: rgb(0, 0, 0);
-    padding: 4px 6px;
-    border-radius: 3px;
-    color: white;
-    width: 70px;
-}
-
-.func_btn:hover{
-    cursor:pointer;
-}
 
 /* 오른쪽 사이드 섹션 */
 .task_queue {
@@ -145,3 +106,4 @@
     font-size: 7px;
     margin: auto 0px;
 }
+
