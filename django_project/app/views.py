@@ -69,12 +69,14 @@ def register_page(request):
 
 def create_container(request):
     form = ContainerForm()
+    containers = Container.objects.all()
+    context = {'containers': containers, 'form': form}
     if request.method == 'POST':
         form = ContainerForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('home')
-    return render(request, 'app/container_form.html', {'form': form})
+    return render(request, 'app/container_form.html', context)
 
 
 """

@@ -13,5 +13,8 @@
     {% if request.user.is_active %}
         {% include 'app/content.html' %}
         {% include 'app/manage_container.html' %}
+        {% block sub_content %}
+        {% endblock sub_content %}
     {% endif %}
 {% endblock content %}
+

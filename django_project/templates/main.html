@@ -19,11 +19,17 @@
 </head>
 <body>
 {% include 'header.html' %}
-{% include 'admin_interface.html' %}
+
+{% if request.user.is_active %}
+    {% include 'admin_interface.html' %}
+{% endif %}
 
 {% block content %}
 {% endblock content %}
 
 {% include 'footer.html' %}
+<script type="text/javascript" , src="{% static 'js/keep_scroll.js' %}"></script>
+{% block js %}
+{% endblock js %}
 </body>
 </html>
