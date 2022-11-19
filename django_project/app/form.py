@@ -9,6 +9,7 @@ class ContainerForm(ModelForm):
         model = Container
         fields = ['port', 'goods', 'goods_cnt']
 
+    port = forms.CharField(widget=forms.TextInput(attrs={'readonly': 'readonly'}))
 
 class MyUserCreationForm(UserCreationForm):
     class Meta:

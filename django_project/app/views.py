@@ -69,7 +69,7 @@ def register_page(request):
 
 
 def create_container(request):
-    form = ContainerForm()
+    form = ContainerForm(initial={'port': request.user.__str__()})
     containers = Container.objects.all()
     user_info = request.user.__str__()
     context = {'containers': containers, 'form': form, 'user_info': user_info}
