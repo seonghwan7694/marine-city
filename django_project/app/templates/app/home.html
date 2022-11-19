@@ -3,6 +3,8 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'css/content.css' %}" type="text/css">
+    {% block sub_head %}
+    {% endblock sub_head %}
 {% endblock head %}
 
 {% block content %}
@@ -79,5 +81,7 @@
                 </div>
             </div>
         </div>
+        {% block sub_content %}
+        {% endblock sub_content %}
     {% endif %}
 {% endblock content %}

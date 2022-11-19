@@ -1,11 +1,11 @@
-{% extends 'main.html' %}
+{% extends 'app/home.html' %}
 {% load static %}
 
-{% block head %}
+{% block sub_head %}
     <link rel="stylesheet" href="{% static 'css/container_form.css' %}" type="text/css">
-{% endblock head %}
+{% endblock sub_head %}
 
-{% block content %}
+{% block sub_content %}
     {% load static %}
     <div class="container">
         <form method="POST" action="" class="container_form">
@@ -16,5 +16,4 @@
             <a href="{% url 'home' %}" class="container_form_quit">Quit</a>
         </form>
     </div>
-
-{% endblock content %}
+{% endblock sub_content %}
