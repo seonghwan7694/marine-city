@@ -3,6 +3,7 @@
 <div class="super_container">
     <div class="container_list">
         {% for container in containers %}
+            {% if container.port == user_info or request.user.username == "admin" %}
             <div class="container_list_element">
                 <div class="container_list_element_1">
                     <div class="container_list_element_1-1">
@@ -29,6 +30,7 @@
                 </div>
                 <div class="container_list_element_3">...</div>
             </div>
+            {% endif %}
         {% endfor %}
     </div>
 </div>

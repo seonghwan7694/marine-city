@@ -21,8 +21,9 @@ def main(request):
 
 def home(request):
     containers = Container.objects.all()
-    context = {'containers': containers}
-    return render(request, 'app/home.html', context)
+    user_info = request.user.__str__()
+    context = {'containers': containers, 'user_info': user_info}
+    return render(request, 'app/home.html', context,)
 
 
 def login_page(request):
@@ -70,7 +71,8 @@ def register_page(request):
 def create_container(request):
     form = ContainerForm()
     containers = Container.objects.all()
-    context = {'containers': containers, 'form': form}
+    user_info = request.user.__str__()
+    context = {'containers': containers, 'form': form, 'user_info': user_info}
     if request.method == 'POST':
         form = ContainerForm(request.POST)
         if form.is_valid():
