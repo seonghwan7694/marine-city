@@ -19,7 +19,7 @@
 
 .container_delete_form_0 {
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 18px;
     font-weight: 900;
     font-style: italic;
@@ -31,7 +31,10 @@
 
 .container_delete_form_1 {
     font-size: 12px;
-    font-weight: 600;
+}
+
+.container_delete_form_2 {
+    margin-top: 6px;
 }
 
 .container_delete_form_2_btn {

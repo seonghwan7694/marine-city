@@ -106,7 +106,10 @@ def update_container(request, pk):
     return render(request, 'app/container_update.html', context)
 
 
-def read_container(request, pk):
+def detail_container(request, pk):
     container = Container.objects.get(id=pk)
-    context = {'container': container}
-    return render(request, 'app/container.html', context)
+    form = ContainerForm(instance=container)
+    user_info = request.user.__str__()
+    containers = Container.objects.all()
+    context = {'container': container, 'containers': containers, 'user_info': user_info}
+    return render(request, 'app/container_detail.html', context)
