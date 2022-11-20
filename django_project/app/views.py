@@ -95,13 +95,15 @@ def delete_container(request, pk):
 def update_container(request, pk):
     container = Container.objects.get(id=pk)
     form = ContainerForm(instance=container)
+    user_info = request.user.__str__()
+    containers = Container.objects.all()
     if request.method == 'POST':
         form = ContainerForm(request.POST, instance=container)
         if form.is_valid():
             form.save()
             return redirect('home')
-    context = {'form': form}
-    return render(request, 'app/container_form.html', context)
+    context = {'form': form, 'containers': containers, 'user_info': user_info}
+    return render(request, 'app/container_update.html', context)
 
 
 def read_container(request, pk):

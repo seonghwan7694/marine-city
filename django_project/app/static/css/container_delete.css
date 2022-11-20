@@ -4,10 +4,10 @@
     left: 40%;
     top: 40%;
     z-index: 10;
-    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     padding: 5px 9px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid black;
 }
 
 .container_delete_form {
