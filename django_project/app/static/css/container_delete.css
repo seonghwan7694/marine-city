@@ -1,0 +1,59 @@
+.container_delete_container {
+    display: inline-block;
+    position: fixed;
+    left: 40%;
+    top: 40%;
+    z-index: 10;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 5px 9px;
+    background-color: white;
+}
+
+.container_delete_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_delete_form_0 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 900;
+    font-style: italic;
+    text-decoration-line: line-through;
+    text-decoration-color: #FFFF00;
+    text-decoration-thickness: 0.9px;
+    text-decoration-style: double;
+}
+
+.container_delete_form_1 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.container_delete_form_2_btn {
+    font-size: 10px;
+    padding: 4px 10px;
+    border: none;
+    background-color: #d0e0e0;
+    border-radius: 10px;
+    color: white;
+}
+
+.container_delete_form_2_btn:hover {
+    cursor: pointer;
+    background-color: #9EAEAE;
+}
+
+.container_delete_form_3 {
+    margin-top: 4px;
+    font-size: 8px;
+    text-decoration: underline black 0.15px;
+}
+
+.container_delete_form_3:hover {
+    cursor: pointer;
+}

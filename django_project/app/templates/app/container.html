@@ -6,5 +6,8 @@
         <h1>개수 : {{ container.goods_cnt }}</h1>
         <h1>수정일 : {{ container.updated }}</h1>
         <h1>생성일 : {{ container.created }}</h1>
+        <div class="container_list_element_1-2-4">수정일</div>
+        <div class="container_list_element_1-2-5">{{ container.updated|date:"h시 i분" }}</div>
+        <div class="container_list_element_1-2-6">{{ container.updated|date:"Y년 m월 d일" }}</div>
     </div>
 {% endblock content %}

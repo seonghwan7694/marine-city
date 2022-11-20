@@ -82,11 +82,14 @@ def create_container(request):
 
 
 def delete_container(request, pk):
+    containers = Container.objects.all()
+    user_info = request.user.__str__()
     container = Container.objects.get(id=pk)
     if request.method == 'POST':
         container.delete()
         return redirect('home')
-    return render(request, 'app/container_delete.html', {'obj': container})
+    context = {'containers': containers, 'user_info': user_info}
+    return render(request, 'app/container_delete.html', context)
 
 
 def update_container(request, pk):

@@ -4,7 +4,7 @@
     margin-top: 3px;
 }
 
-.container_list {
+.container_list__ {
     flex: 3;
     display: flex;
     flex-direction: row;
@@ -42,11 +42,8 @@
     right: 5px;
     top: 3px;
     border-radius: 50%;
-}
-
-.container_list_element_2:hover {
-    cursor: pointer;
-    background-color: rgb(201, 201, 201);
+    display: flex;
+    flex-direction: column;
 }
 
 .container_list_element_1-1 {
@@ -58,7 +55,6 @@
     flex: 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
@@ -70,4 +66,12 @@
 .container_list_element_1-1-1 {
     font-size: 10px;
     text-align: center;
+}
+
+.container_list_element_1-2-1,
+.container_list_element_1-2-2,
+.container_list_element_1-2-3 {
+    display: inline-block;
+    margin: 3px 0;
+    font-size: 13px;
 }
