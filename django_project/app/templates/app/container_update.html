@@ -7,11 +7,12 @@
 
 {% block sub_content %}
     {% load static %}
-    <div class="container">
+    <div class="container__">
         <form method="POST" action="" class="container_form">
             {% csrf_token %}
             <div class="container_form_title">software logistics</div>
-            <div class="container_form_cmd"> {{ form.port|safe }}에 {{ form.goods }}을(를) {{ form.goods_cnt }}개 담은 컨테이너로 수정합니다.</div>
+            <div class="container_form_cmd">{{ form.goods }}을(를) {{ form.goods_cnt }}개 담은 컨테이너로 수정합니다.</div>
+            <div style="visibility: hidden; display: none">{{ form.port|safe }}</div>
             <input type="submit" value="submit" class="submit"/>
             <a href="{% url 'home' %}" class="container_form_quit">close</a>
         </form>
