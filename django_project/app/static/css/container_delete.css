@@ -54,9 +54,9 @@
 .container_delete_form_3 {
     margin-top: 4px;
     font-size: 8px;
-    text-decoration: underline black 0.15px;
 }
 
 .container_delete_form_3:hover {
     cursor: pointer;
+    text-decoration: underline black 0.15px;
 }
