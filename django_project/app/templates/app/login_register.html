@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login_register.css' %}" type="text/css">
+{% endblock head %}
+
+
+{% block content %}
+    {% load static %}
+    {% if page == 'login' %}
+        <div class="login_container">
+            <div class="login">
+                <form method="POST" action="" class="login_form">
+                    {% csrf_token %}
+                    <div class="login_form_title">
+                        software logistics
+                    </div>
+                    <div>
+                        <input type="text" name="username" placeholder="Username" class="login_form_input"/>
+                    </div>
+                    <div>
+                        <input type="password" name="password" placeholder="Password"
+                               class="login_form_input"/>
+                    </div>
+                    <div><input type="submit" value="Sign in" class="login_form_button"/></div>
+
+                </form>
+
+                <div class="login_text1">Haven't signed up yet?</div>
+                <div style="text-align: center;"><a class="login_text2" href="{% url 'register' %}">Sign up</a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="register_container">
+            <div class="register">
+                <form method="POST" action="" class="register_form">
+                    {% csrf_token %}
+                    <div class="login_form_title">
+                        software logistics
+                    </div>
+                    <div> {{ form.username }} </div>
+                    <div> {{ form.password1 }} </div>
+                    <div> {{ form.password2 }} </div>
+                    <div> {{ form.manage_port }} </div>
+                    <div><input type="submit" value="Register" class="register_form_button"/></div>
+                </form>
+                <div class="register_text1">Already signed up yet?</div>
+                <div class="register_text2"><a href="{% url 'login' %}">Sign in</a></div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}

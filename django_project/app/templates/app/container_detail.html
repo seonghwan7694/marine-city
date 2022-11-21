@@ -1,0 +1,29 @@
+{% extends 'app/home.html' %}
+{% load static %}
+
+{% block sub_head %}
+    <link rel="stylesheet" href="{% static 'css/container_detail.css' %}" type="text/css">
+{% endblock sub_head %}
+
+{% block sub_content %}
+    <div class="container_detail_inline">
+        <div class="container_detail_container">
+            <div class="container_detail_title">software logistics</div>
+            <div class="container_detail-1">
+                <div class="container_detail-1-0">생성일</div>
+                <div class="container_detail-1-container">
+                    <div class="container_detail-1-1">{{ container.created|date:"Y년 m월 d일" }}</div>
+                    <div class="container_detail-1-2">{{ container.created|date:"h시 i분" }}</div>
+                </div>
+            </div>
+            <div class="container_detail-1">
+                <div class="container_detail-1-0">수정일</div>
+                <div class="container_detail-1-container">
+                    <div class="container_detail-1-1">{{ container.updated|date:"Y년 m월 d일" }}</div>
+                    <div class="container_detail-1-2">{{ container.updated|date:"h시 i분" }}</div>
+                </div>
+            </div>
+            <a href="{% url 'home' %}" class="container_detail_close">close</a>
+        </div>
+    </div>
+{% endblock sub_content %}

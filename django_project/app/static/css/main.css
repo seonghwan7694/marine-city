@@ -1,7 +1,23 @@
-#test{
-    font-size:100px;
-    font-style: italic;
-    font-weight: 900;
-    color:yellow;
-    background-color: black;
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+a {
+    all: unset;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+select {
+  -webkit-appearance: none;
 }

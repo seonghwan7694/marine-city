@@ -1,12 +1,23 @@
-<!DOCTYPE html>
+{% extends 'main.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
-</head>
-<body>
-    <div id="test">It works!</div>
-</body>
-</html>
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/content.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/manage_container.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/admin_interface.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/drop_down.css' %}" type="text/css">
+    {% block sub_head %}
+    {% endblock sub_head %}
+{% endblock head %}
+
+{% block content %}
+    {% load static %}
+    {% if request.user.is_active %}
+        {% include 'admin_interface.html' %}
+        {% include 'app/content.html' %}
+        {% include 'app/manage_container.html' %}
+        {% block sub_content %}
+        {% endblock sub_content %}
+    {% endif %}
+{% endblock content %}
+

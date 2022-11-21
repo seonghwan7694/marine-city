@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>컨테이너 관리 프로그램</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" type="text/css">
+    {% block head %}
+    {% endblock head %}
+</head>
+<body>
+{% include 'header.html' %}
+
+{% block content %}
+{% endblock content %}
+
+{% include 'footer.html' %}
+<script type="text/javascript" src="{% static 'js/keep_scroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+{% block js %}
+{% endblock js %}
+</body>
+</html>

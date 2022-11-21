@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-oyf3$xcblkhfn!pdt&4k-_dl&3h87m4awa2bf$c&x9oh3z%bew'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False;
+DEBUG = True;
 
 ALLOWED_HOSTS = [
     '192.168.35.119',
@@ -64,7 +64,7 @@ ROOT_URLCONF = 'conf.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates',]  # 앱의 템플릿 경로를 연결해주었음.
+        'DIRS': [BASE_DIR / 'templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {

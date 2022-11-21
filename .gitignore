@@ -9,6 +9,7 @@ idea
 django_project/app/migrations/__pycache__
 django_project/app/__pycache__
 django_project/conf/__pycache__
+django_project/__pycache__
 
 # ImageField, FileField를 담당하는 media 디렉터리는 깨끗한 상태를 유지하면 좋을 것 같음.
 django_project/media/*
