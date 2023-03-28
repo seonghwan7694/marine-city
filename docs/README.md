@@ -1,6 +1,6 @@
-# 📂 doc
+# 📂 docs
 
-| Order 	|                           Name                          	| Link 	| Discription 	| Status |
+| order 	|                           name                          	| link 	| discription 	| status |
 |:-----:	|:-------------------------------------------------------:	|:----:	|:-----------:	| :----: |
 |   1   	|          창의적 공학설계 - 2주차 - SRS Template : ver.1         	|   [💾💾💾](창의적%20공학설계%20-%202주차%20-%20SRS%20Template.doc)   	|       SRS 보고서입니다.      	| Bad |
 | 2 | 창의적 공학설계 - 2주차 - SRS Template : ver.2 | [💾💾💾](https://docs.google.com/document/d/1XbRNefbo04Egzha5CYY1oDQJY-8K8nnPd4OAtews-k4/edit) | SRS 보고서입니다. | Bad |
@@ -11,4 +11,4 @@
 ## meaning of 'Status'
 - Good : It was determined through enough meetings.
 - Bad : It was determined through NOT enough communications & meetings.
-- Not available : This project was not finished because we had faced various problem(teamwork problem, technique problem, not enought time). So, Final-report can't existed.
+- Not available : This project was not finished because we had faced various problem(teamwork problem, technique problem, not enought time). So, Final-report can't be existed.

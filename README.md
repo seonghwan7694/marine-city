@@ -2,17 +2,17 @@
 
 ### 조 이름 : 코딩잘짜조
 
-  |  **직책**	| **이름** |
+  |  **position**	| **name** |
   |:--------:|:-------:|
-  | **팀장** 	|  김준형   |	
-  | **팀원** 	|  이민형  	|
-  | **팀원** 	|  김호성  	|
-  | **팀원** 	|  김성환  	|
+  | **leader** 	|  김준형   |	
+  | **member** 	|  이민형  	|
+  | **member** 	|  김호성  	|
+  | **member** 	|  김성환  	|
   
 ### Explain about this repository
 
   | directory name 	| Link 	| Discription 	|
   |:--------------:	|:----:	|:-----------:	|
-  |   django_project  	|  [📂📂📂](./django_project/)    	|     FE using Django      	|
+  |   django_project  	|  [📂📂📂](./django_project/)    	|     Front-End using Django      	|
   |    documents   	|  [📂📂📂](./documents/)    	|      uploading SRS specifications, project report      	|
   |   
