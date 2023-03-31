@@ -1,6 +1,6 @@
 # 👨‍💻 창의적 공학 설계(2022)
 
-### 조 이름 : 코딩잘짜조
+### Team name : 코딩잘짜조
 
   |  **position**	| **name** |
   |:--------:|:-------:|
@@ -11,8 +11,11 @@
   
 ### Explain about this repository
 
-  | directory name 	| Link 	| Discription 	|
+  | directory name 	| link 	| discription 	|
   |:--------------:	|:----:	|:-----------:	|
-  |   django_project  	|  [📂📂📂](./django_project/)    	|     Front-End using Django      	|
-  |    documents   	|  [📂📂📂](./documents/)    	|      uploading SRS specifications, project report      	|
-  |   
+  |   fe	|  [📂📂📂](./fe/)    	|     Front-End using Django      	|
+  |  docs |  [📂📂📂](./docs/)    	|      Uploading SRS specifications, project report      	|
+  |  esp  | [📂📂📂](./esp/) | ESP's source codes managed by platform.io |
+
+
+### discription about this project more... more...!!!!!
