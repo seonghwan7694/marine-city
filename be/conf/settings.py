@@ -16,6 +16,7 @@ import mimetypes
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -30,6 +31,7 @@ ALLOWED_HOSTS = [
     '192.168.35.119',
     'localhost',
     '127.0.0.1',
+    'code-server.seonghwan7694.dev',
 ]
 
 # Application definition
@@ -41,7 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.apps.BaseConfig'
+
+    'app',
+    'rest_framework',
 ]
 
 AUTH_USER_MODEL = 'app.User'
